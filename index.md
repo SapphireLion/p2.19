@@ -14,7 +14,7 @@ Timer API
 
 
 _Gameplay_ (Made in Inkscape)
-![alt text](https://raw.githubusercontent.com/SapphireLion/p2.19/master/gameplaySketch.png)
+![alt text](https://raw.githubusercontent.com/SapphireLion/p2.19/gameplaySketch.png)
 
 _Menu Inerface_
 ![alt text](https://raw.githubusercontent.com/SapphireLion/p2.19/master/menuSketch.png)

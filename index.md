@@ -3,28 +3,23 @@
 ![alt text](https://raw.githubusercontent.com/SapphireLion/p1.21/master/GroupPhotoBlueEyes.jpg)
 
 ### 1. Kevin Torres: Commander and the Leader
-YouTube API, News API
+Questions API
 ### 2. Sergio Ponce: The Joy and the Laughter
-Calendar API, Spotify API
+Menu API
 ### 3. Jacob Finley Crawford: The Toughest Fighter
-Mirror Design, Health API
+Hangman API
 ### 4. Nolan Ford: The Other Guy
-Weather API, Clock API
-## Sketch 1
-### Before
-![alt text](https://raw.githubusercontent.com/SapphireLion/p1.21/master/sketch2.png)
+Timer API
+## Sketches
 
-### After
-![alt text](https://raw.githubusercontent.com/SapphireLion/p1.21/master/sketch1.png)
 
-## Sketch 2
-![alt text](https://raw.githubusercontent.com/SapphireLion/p1.21/master/sketch3.jpg)
+_Gameplay_ (Made in Inkscape)
+![alt text](https://raw.githubusercontent.com/SapphireLion/p2.19/master/gameplaySketch.png)
 
-## GIF
-![alt text](https://raw.githubusercontent.com/SapphireLion/p1.21/master/p1.21.gif)
+_Menu Inerface_
+![alt text](https://raw.githubusercontent.com/SapphireLion/p2.19/master/menuSketch.png)
 
-### Demo
-[Demo](https://sapphirelion.github.io/Blank/)
+
 
 
 You can use the [editor on GitHub](https://github.com/SapphireLion/p1.21/edit/master/index.md) to maintain and preview the content for your website in Markdown files.

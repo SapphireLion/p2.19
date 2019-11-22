@@ -23,8 +23,6 @@ _Help Menu Inerface_
 ![alt text](https://raw.githubusercontent.com/SapphireLion/p2.19/master/helpMenu.jpg)
 
 _Options Menu Interface_
-
-_Help Menu Inerface_
 ![alt text](https://raw.githubusercontent.com/SapphireLion/p2.19/master/optionsMenu.jpg)
 
 You can use the [editor on GitHub](https://github.com/SapphireLion/p1.21/edit/master/index.md) to maintain and preview the content for your website in Markdown files.

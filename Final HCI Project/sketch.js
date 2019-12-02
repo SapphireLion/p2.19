@@ -147,10 +147,12 @@ function setup() {
     questionDiv = createDiv();
     rulesDiv = createDiv();
     feedbackDiv = createDiv('You have not answered yet!');
-    feedbackDiv.position(700,650);
+    feedbackDiv.position(650,650);
+    feedbackDiv.style('font-size', '200%');
 
     winorlose = createDiv();
     winorlose.position(700,700);
+    winorlose.style('font-weight', 'bold');
 
     rulesDiv.position(800,0);
     rulesDiv.size(450, AUTO);

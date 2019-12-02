@@ -110,7 +110,7 @@ function setup() {
     optionDText1="D. Kangaroos is released fourth";
     optionEText1="E. Kangaroos is released fifth.";
     correctOption1 = 'E';
-
+/*
     //Question 2 setup
     questionText2= "Which one of the following must be true?";
     optionAText2="A. Fiesta is released earlier than Hurricanes.";
@@ -128,7 +128,7 @@ function setup() {
     optionDText3="Lovebird is released third.";
     optionEText3="Lovebird is released fifth.";
     correctOption3 = 'E';
-
+*/
     //formatting
     questionDiv = createDiv();
     rulesDiv = createDiv();
@@ -185,6 +185,7 @@ function draw() {
             optionDText=optionDText2;
             optionEText=optionEText2;
             break;
+/*
         case 2:
             questionText = questionText3;
             correctOption = correctOption3;
@@ -193,7 +194,7 @@ function draw() {
             optionCText=optionCText3;
             optionDText=optionDText3
             optionEText=optionEText3;
-            break;
+            break;*/
     }
 
     //textSize(32);

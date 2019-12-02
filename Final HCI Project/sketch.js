@@ -62,6 +62,14 @@ let correctOption3;
 let correctOption4;
 let correctOption5;
 
+let headcirc;
+let bodyline;
+let arm1;
+let arm2;
+let leg1;
+let leg2;
+
+
 
 function preload(){
     //SAOFont=loadFont('assets/SAOWelcomeAnotherTT-Bold.ttf');
@@ -70,6 +78,22 @@ function preload(){
 function setup() {
     createCanvas(1280, 640);
     background(255);
+
+    //hanger
+    fill(0);
+    strokeWeight(4);
+    line(300,100,300,800);
+    line(300,100,450,100);
+    line(450,100,450,200);
+
+    //hangman
+    headcirc = circle(450, 250, 100);
+    bodyline = line(450, 300, 450, 500);
+    arm1 = line(450, 350, 550, 450);
+    arm2 = line(450, 350, 350, 450);
+    leg1 = line(450, 500, 550,  600);
+    leg2 = line(450, 500, 350, 600);
+
     questionCount=0;
 
 
@@ -124,11 +148,8 @@ function setup() {
 }
 
 function draw() {
-    //hanger
-    fill(0);
-    line(300,100,300,800);
-    line(300,100,450,100);
-    line(450,100,450,200);
+
+
     switch (questionCount){
         case 0:
             questionText = questionText1;

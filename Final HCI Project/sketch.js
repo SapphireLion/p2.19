@@ -111,7 +111,7 @@ function setup() {
     wrongCount = 0;
 
 
-    rulesText="A movie sutdio is scheduling the release of six films -- Fiesta, Glaciers, Hurricanes, Jets, Kangaroos, and Lovebird. No two of these films can be released on the same date. The release schedule is governed by the following conditions:";
+    rulesText="A movie studio is scheduling the release of six films -- Fiesta, Glaciers, Hurricanes, Jets, Kangaroos, and Lovebird. No two of these films can be released on the same date. The release schedule is governed by the following conditions:";
     cond1="Fiesta must be released earlier than both Jets and Lovebird.";
     cond2="Kangaroos must be released earlier than Jets, and Jets must be released earlier than Hurricanes.";
     cond3= "Lovebird must be released earlier than Glaciers";

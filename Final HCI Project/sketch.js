@@ -69,7 +69,6 @@ let arm2;
 let leg1;
 let leg2;
 
-let wrongCount;
 
 
 function preload(){
@@ -79,16 +78,7 @@ function preload(){
 function setup() {
     createCanvas(1280, 640);
     background(255);
-    optionAbtn = createButton('Pick A');
-    optionAbtn.mousePressed(checkA);
-    optionBbtn = createButton('Pick B');
-    optionBbtn.mousePressed(checkB);
-    optionCbtn = createButton('Pick C');
-    optionCbtn.mousePressed(checkC);
-    optionDbtn = createButton('Pick D');
-    optionDbtn.mousePressed(checkD);
-    optionEbtn = createButton('Pick E');
-    optionEbtn.mousePressed(checkE);
+
     //hanger
     fill(0);
     strokeWeight(4);
@@ -97,13 +87,14 @@ function setup() {
     line(450,100,450,200);
 
     //hangman
-    //bodyline = line(450, 300, 450, 500);
-    //arm1 = line(450, 350, 550, 450);
-    //arm2 = line(450, 350, 350, 450);
-    //leg1 = line(450, 500, 550,  600);
-    //leg2 = line(450, 500, 350, 600);
+    headcirc = circle(450, 250, 100);
+    bodyline = line(450, 300, 450, 500);
+    arm1 = line(450, 350, 550, 450);
+    arm2 = line(450, 350, 350, 450);
+    leg1 = line(450, 500, 550,  600);
+    leg2 = line(450, 500, 350, 600);
+
     questionCount=0;
-    wrongCount = 0;
 
 
     rulesText="A movie sutdio is scheduling the release of six films -- Fiesta, Glaciers, Hurricanes, Jets, Kangaroos, and Lovebird. No two of these films can be released on the same date. The release schedule is governed by the following conditions:";
@@ -120,13 +111,27 @@ function setup() {
     optionEText1="E. Kangaroos is released fifth.";
     correctOption1 = 'E';
 
-    //q
+    //Question 2 setup
+    questionText2= "Which one of the following must be true?";
+    optionAText2="A. Fiesta is released earlier than Hurricanes.";
+    optionBText2="B. Jets is released earlier than Glaciers.";
+    optionCText2="C. Kangaroos is released earlier than Glaciers.";
+    optionDText2= "Lovebird is released earlier than Glaciers.";
+    optionEText2="Lovebird is released earlier than Jets.";
+    correctOption2 = 'A';
+    
+    //Question 3 Setup
+    questionText3= "If Glaciers is released earlier than Hurricanes, then each of the followibg could be true EXCEPT:";
+    optionAText3="A. Glaciers is released fourth.";
+    optionBText3="B. Jets is released third.";
+    optionCText3="C. Kangaroos is released second.";
+    optionDText3="Lovebird is released third.";
+    optionEText3="Lovebird is released fifth.";
+    correctOption3 = 'E';
 
     //formatting
     questionDiv = createDiv();
     rulesDiv = createDiv();
-    feedbackDiv = createDiv('You have not answered yet!');
-    feedbackDiv.position(700,650);
 
     rulesDiv.position(800,0);
     rulesDiv.size(450, AUTO);
@@ -180,6 +185,15 @@ function draw() {
             optionDText=optionDText2;
             optionEText=optionEText2;
             break;
+        case 2:
+            questionText = questionText3;
+            correctOption = correctOption3;
+            optionAText=optionAText3;
+            optionBText=optionBText3;
+            optionCText=optionCText3;
+            optionDText=optionDText3
+            optionEText=optionEText3;
+            break;
     }
 
     //textSize(32);
@@ -212,89 +226,5 @@ function draw() {
     optionDpar.html(optionDText);
     optionEpar.html(optionEText);
 
-}
-function wrongAnswer(){
-    if(wrongCount === 0){
-        headcirc = circle(450, 250, 100);
-        wrongCount += 1;
-        return;
-    }
-    if(wrongCount === 1){
-        bodyline = line(450, 300, 450, 500);
-        wrongCount +=1;
-        return;
-    }
-    if(wrongCount === 2){
-        arm1 = line(450, 350, 550, 450);
-        wrongCount +=1;
-        return;
-    }
-    if(wrongCount === 3){
-        arm2 = line(450, 350, 350, 450);
-        wrongCount +=1;
-        return;
-    }
-    if(wrongCount === 4){
-        leg1 = line(450, 500, 550,  600);
-        wrongCount +=1;
-        return;
-    }
-    if(wrongCount === 5){
-        leg2 = line(450, 500, 350, 600);
-        wrongCount +=1;
-        return;
-    }
-}
-function checkA(){
-    answer = 'A';
-    if(answer === correctOption){
-        feedbackDiv.html("You are correct! WOW!");
-    }
-    else{
-        wrongAnswer();
-        feedbackDiv.html("You are incorrect! Sorry!")
-    }
-}
 
-function checkB(){
-    answer = "B";
-    if(answer === correctOption){
-        feedbackDiv.html("You are correct! WOW!");
-    }
-    else{
-        wrongAnswer();
-        feedbackDiv.html("You are incorrect! Sorry!")
-    }
 }
-function checkC(){
-    answer = "C";
-    if(answer === correctOption){
-        feedbackDiv.html("You are correct! WOW!");
-    }
-    else{
-        wrongAnswer();
-        feedbackDiv.html("You are incorrect! Sorry!")
-    }
-}
-function checkD(){
-    answer = "D";
-    if(answer === correctOption){
-        feedbackDiv.html("You are correct! WOW!");
-    }
-    else{
-        wrongAnswer();
-        feedbackDiv.html("You are incorrect! Sorry!")
-    }
-}
-function checkE(){
-    answer = "E";
-    if(answer === correctOption){
-        feedbackDiv.html("You are correct! WOW!");
-    }
-    else{
-        wrongAnswer();
-        feedbackDiv.html("You are incorrect! Sorry!")
-    }
-}
-
-

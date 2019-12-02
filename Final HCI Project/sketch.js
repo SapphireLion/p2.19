@@ -80,14 +80,19 @@ function setup() {
     createCanvas(1280, 640);
     background(255);
     optionAbtn = createButton('Pick A');
+    optionAbtn.position(730, 410);
     optionAbtn.mousePressed(checkA);
     optionBbtn = createButton('Pick B');
+    optionBbtn.position(730, 450);
     optionBbtn.mousePressed(checkB);
     optionCbtn = createButton('Pick C');
+    optionCbtn.position(730, 490);
     optionCbtn.mousePressed(checkC);
     optionDbtn = createButton('Pick D');
+    optionDbtn.position(730, 530);
     optionDbtn.mousePressed(checkD);
     optionEbtn = createButton('Pick E');
+    optionEbtn.position(730, 570);
     optionEbtn.mousePressed(checkE);
     //hanger
     fill(0);
@@ -125,8 +130,8 @@ function setup() {
     optionAText2="A. Fiesta is released earlier than Hurricanes.";
     optionBText2="B. Jets is released earlier than Glaciers.";
     optionCText2="C. Kangaroos is released earlier than Glaciers.";
-    optionDText2= "Lovebird is released earlier than Glaciers.";
-    optionEText2="Lovebird is released earlier than Jets.";
+    optionDText2= "D. Lovebird is released earlier than Glaciers.";
+    optionEText2="E. Lovebird is released earlier than Jets.";
     correctOption2 = 'A';
 
     //Question 3 Setup
@@ -134,8 +139,8 @@ function setup() {
     optionAText3="A. Glaciers is released fourth.";
     optionBText3="B. Jets is released third.";
     optionCText3="C. Kangaroos is released second.";
-    optionDText3="Lovebird is released third.";
-    optionEText3="Lovebird is released fifth.";
+    optionDText3="D. Lovebird is released third.";
+    optionEText3="E. Lovebird is released fifth.";
     correctOption3 = 'E';
 
     //formatting
@@ -143,6 +148,9 @@ function setup() {
     rulesDiv = createDiv();
     feedbackDiv = createDiv('You have not answered yet!');
     feedbackDiv.position(700,650);
+
+    winorlose = createDiv();
+    winorlose.position(700,700);
 
     rulesDiv.position(800,0);
     rulesDiv.size(450, AUTO);
@@ -196,6 +204,17 @@ function draw() {
             optionDText=optionDText2;
             optionEText=optionEText2;
             break;
+        case 2:
+            questionText = questionText3;
+            correctOption = correctOption3;
+            optionAText=optionAText3;
+            optionBText=optionBText3;
+            optionCText=optionCText3;
+            optionDText=optionDText3;
+            optionEText=optionEText3;
+            break;
+        case 3:
+            winorlose.html("YOU WIN!!!!!");
     }
 
     //textSize(32);
@@ -257,7 +276,7 @@ function wrongAnswer(){
     }
     if(wrongCount === 5){
         leg2 = line(450, 500, 350, 600);
-        wrongCount +=1;
+        winorlose.html("YOU LOSE!!!");
         return;
     }
 }
@@ -265,6 +284,7 @@ function checkA(){
     answer = 'A';
     if(answer === correctOption){
         feedbackDiv.html("You are correct! WOW!");
+        questionCount += 1;
     }
     else{
         wrongAnswer();
@@ -276,6 +296,7 @@ function checkB(){
     answer = "B";
     if(answer === correctOption){
         feedbackDiv.html("You are correct! WOW!");
+        questionCount += 1;
     }
     else{
         wrongAnswer();
@@ -286,6 +307,7 @@ function checkC(){
     answer = "C";
     if(answer === correctOption){
         feedbackDiv.html("You are correct! WOW!");
+        questionCount += 1;
     }
     else{
         wrongAnswer();
@@ -296,6 +318,7 @@ function checkD(){
     answer = "D";
     if(answer === correctOption){
         feedbackDiv.html("You are correct! WOW!");
+        questionCount += 1;
     }
     else{
         wrongAnswer();
@@ -306,6 +329,7 @@ function checkE(){
     answer = "E";
     if(answer === correctOption){
         feedbackDiv.html("You are correct! WOW!");
+        questionCount += 1;
     }
     else{
         wrongAnswer();

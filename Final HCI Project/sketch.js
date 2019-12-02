@@ -215,6 +215,8 @@ function draw() {
             break;
         case 3:
             winorlose.html("YOU WIN!!!!!");
+            winorlose.style('color', 'green');
+            winorlose.style('font-size','200%');
     }
 
     //textSize(32);
@@ -277,6 +279,8 @@ function wrongAnswer(){
     if(wrongCount === 5){
         leg2 = line(450, 500, 350, 600);
         winorlose.html("YOU LOSE!!!");
+        winorlose.style('color', 'red');
+        winorlose.style('font-size', '200%');
         return;
     }
 }

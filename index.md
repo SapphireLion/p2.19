@@ -14,7 +14,7 @@ Timer API
 ## User Study
 
 ### Task Description
-Each set of questions is based on a scenario with a set of conditions. The questions are to be answered on what can be logically inferred from the scenario and conditions. For each question, choose the response that most accurately and completely answers the question. If your response is correct, you will move on to the next question. If your response is incorrect, a new piece of the hangman will be drawn. You lose when all pieces of the hangman are drawn. You win when you answer all of the questions.
+The gameplay is the sole focus of this task. Each set of questions is based on a scenario with a set of conditions. The questions are to be answered on what can be logically inferred from the scenario and conditions. For each question, choose the response that most accurately and completely answers the question. If your response is correct, you will move on to the next question. If your response is incorrect, a new piece of the hangman will be drawn. You lose when all pieces of the hangman are drawn. You win when you answer all of the questions.
 
 ### Hypothesis
 By using the game, the user should be more prepared for the Logic Games section of the LSAT (Law School Admissions Test).

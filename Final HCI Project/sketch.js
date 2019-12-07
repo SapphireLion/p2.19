@@ -71,7 +71,8 @@ let leg2;
 
 let wrongCount;
 
-
+let menu = true;
+let help1 = false;
 function preload(){
     //SAOFont=loadFont('assets/SAOWelcomeAnotherTT-Bold.ttf');
 }
@@ -94,13 +95,7 @@ function setup() {
     optionEbtn = createButton('Pick E');
     optionEbtn.position(730, 570);
     optionEbtn.mousePressed(checkE);
-    //hanger
-    fill(0);
-    strokeWeight(4);
-    line(300,100,300,800);
-    line(300,100,450,100);
-    line(450,100,450,200);
-
+    
     //hangman
     //bodyline = line(450, 300, 450, 500);
     //arm1 = line(450, 350, 550, 450);
@@ -181,75 +176,170 @@ function setup() {
     optionCpar.style('text-indent', '20px');
     optionDpar.style('text-indent', '20px');
     optionEpar.style('text-indent', '20px');
+  
+  
+    playbutton = createButton("Play");
+    playbutton.position(570,225)
+    playbutton.mousePressed(play);
+    playbutton.style("font-size", "32px");
+    
+  
+    titleDiv = createDiv("LSAT Hangman");
+    titleDiv.position(225,50);
+    titleDiv.style("font-size", "110px");
+    titleDiv.style('font-style', 'bold');
+  
+    helpbutton = createButton("Help");
+    helpbutton.position(570,290)
+    helpbutton.mousePressed(play);
+    helpbutton.style("font-size", "32px");
+    helpbutton.mousePressed(help);
+  
+    optionsbutton = createButton("Options");
+    optionsbutton.position(550,355)
+    optionsbutton.mousePressed(play);
+    optionsbutton.style("font-size", "32px");
+    optionsbutton.mousePressed(options);
+  
+    helpDiv = createDiv("Rules of the game: You will be given sample logic questions from the LSAT(Law School Admission Test). If you guess wrong, a new piece of the hangman will be drawn. If you guess correctly, you will move on to the next question. The game ends when all pieces of the hangman are drawn.");
+    helpDiv.position(400,200);
+    helpDiv.style("font-size","32px");
+    helpDiv.hide();
+    endhelpbutton = createButton("X");
+    endhelpbutton.position(900,200);
+    endhelpbutton.hide();
+    endhelpbutton.mousePressed(endhelp);
+  
+    ///quitbutton = createButton("X");
+    ///quitbutton.position(1200,25);
+    ///quitbutton.hide();
+    ///quitbutton.mousePressed(quit);
+  
+    
+  
+  
+    
 
 }
 
 function draw() {
 
-
-    switch (questionCount){
-        case 0:
-            questionText = questionText1;
-            correctOption=correctOption1;
-            optionAText=optionAText1;
-            optionBText=optionBText1;
-            optionCText=optionCText1;
-            optionDText=optionDText1;
-            optionEText=optionEText1;
-            break;
-        case 1:
-            questionText = questionText2;
-            correctOption = correctOption2;
-            optionAText=optionAText2;
-            optionBText=optionBText2;
-            optionCText=optionCText2;
-            optionDText=optionDText2;
-            optionEText=optionEText2;
-            break;
-        case 2:
-            questionText = questionText3;
-            correctOption = correctOption3;
-            optionAText=optionAText3;
-            optionBText=optionBText3;
-            optionCText=optionCText3;
-            optionDText=optionDText3;
-            optionEText=optionEText3;
-            break;
-        case 3:
-            winorlose.html("YOU WIN!!!!!");
-            winorlose.style('color', 'green');
-            winorlose.style('font-size','200%');
+    if(menu == true)
+    {
+      background(255,255,255); 
+      optionAbtn.hide();
+      optionBbtn.hide();
+      optionCbtn.hide();
+      optionDbtn.hide();
+      optionEbtn.hide();
+      feedbackDiv.hide();
+      rulesDiv.hide();
+      questionDiv.hide();
+      titleDiv.show();
+      playbutton.show();
+      helpbutton.show();
+      optionsbutton.show();
+      helpDiv.hide();
+      endhelpbutton.hide();
+      if(help1 == true)
+      {
+        helpDiv.show();
+        playbutton.hide();
+        helpbutton.hide();
+        optionsbutton.hide();
+        endhelpbutton.show();
+      }
+      
+      
+      
     }
+    else
+    {
+      titleDiv.hide();
+      playbutton.hide();
+      helpbutton.hide();
+      optionsbutton.hide();
+      optionAbtn.show();
+      optionBbtn.show();
+      optionCbtn.show();
+      optionDbtn.show();
+      optionEbtn.show();
+      feedbackDiv.show();
+      rulesDiv.show();
+      questionDiv.show();
+      //hanger
+      fill(0);
+      strokeWeight(4);
+      hangar1 = line(300,100,300,800);
+      hangar2 = line(300,100,450,100);
+      hangar3 = line(450,100,450,200);
+      
+      ///quitbutton.show();
 
-    //textSize(32);
-    //textFont('Georgia');
-    //text('Rules',100,0,100,100);
-    //fill(0,0,0);
-    //textFont('Arial');
-    //textSize(10);
-    //text(rulesText,textX,100,100,200);
-    //fill(0,0,0);
-    //text(cond1,textX,200,100,100);
-    //fill(0,0,0);
-    //text(cond2,textX,300,100,100);
-    //fill(0,0,0);
-    //text(cond3,textX,400,100,100);
-    //fill(0,0,0);
-    //textSize(32);
-    //textFont('Georgia');
-    //text('Question',textX,100,500,500);
-    //fill(0,0,0);    textFont('Arial');
-    //textSize(24);
-    //text(questionText);
-    //fill(0,0,0);
+      switch (questionCount){
+          case 0:
+              questionText = questionText1;
+              correctOption=correctOption1;
+              optionAText=optionAText1;
+              optionBText=optionBText1;
+              optionCText=optionCText1;
+              optionDText=optionDText1;
+              optionEText=optionEText1;
+              break;
+          case 1:
+              questionText = questionText2;
+              correctOption = correctOption2;
+              optionAText=optionAText2;
+              optionBText=optionBText2;
+              optionCText=optionCText2;
+              optionDText=optionDText2;
+              optionEText=optionEText2;
+              break;
+          case 2:
+              questionText = questionText3;
+              correctOption = correctOption3;
+              optionAText=optionAText3;
+              optionBText=optionBText3;
+              optionCText=optionCText3;
+              optionDText=optionDText3;
+              optionEText=optionEText3;
+              break;
+          case 3:
+              winorlose.html("YOU WIN!!!!!");
+              winorlose.style('color', 'green');
+              winorlose.style('font-size','200%');
+      }
 
-    //shows current question/options on screen
-    questionPar.html(questionText);
-    optionApar.html(optionAText);
-    optionBpar.html(optionBText);
-    optionCpar.html(optionCText);
-    optionDpar.html(optionDText);
-    optionEpar.html(optionEText);
+      //textSize(32);
+      //textFont('Georgia');
+      //text('Rules',100,0,100,100);
+      //fill(0,0,0);
+      //textFont('Arial');
+      //textSize(10);
+      //text(rulesText,textX,100,100,200);
+      //fill(0,0,0);
+      //text(cond1,textX,200,100,100);
+      //fill(0,0,0);
+      //text(cond2,textX,300,100,100);
+      //fill(0,0,0);
+      //text(cond3,textX,400,100,100);
+      //fill(0,0,0);
+      //textSize(32);
+      //textFont('Georgia');
+      //text('Question',textX,100,500,500);
+      //fill(0,0,0);    textFont('Arial');
+      //textSize(24);
+      //text(questionText);
+      //fill(0,0,0);
+
+      //shows current question/options on screen
+      questionPar.html(questionText);
+      optionApar.html(optionAText);
+      optionBpar.html(optionBText);
+      optionCpar.html(optionCText);
+      optionDpar.html(optionDText);
+      optionEpar.html(optionEText);
+    }
 
 }
 function wrongAnswer(){
@@ -285,6 +375,7 @@ function wrongAnswer(){
         winorlose.style('font-size', '200%');
         return;
     }
+
 }
 function checkA(){
     answer = 'A';
@@ -341,4 +432,30 @@ function checkE(){
         wrongAnswer();
         feedbackDiv.html("You are incorrect! Sorry!")
     }
+
+}
+
+function play()
+{
+  menu = false;
+}
+
+function help()
+{
+  help1 = true;
+}
+
+function options()
+{
+  
+}
+
+function endhelp()
+{
+  help1 = false;
+}
+
+function quit()
+{
+  menu = true; 
 }

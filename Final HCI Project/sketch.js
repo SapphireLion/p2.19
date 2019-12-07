@@ -62,6 +62,7 @@ let correctOption3;
 let correctOption4;
 let correctOption5;
 
+
 let headcirc;
 let bodyline;
 let arm1;
@@ -95,6 +96,22 @@ function setup() {
     optionEbtn = createButton('Pick E');
     optionEbtn.position(730, 570);
     optionEbtn.mousePressed(checkE);
+
+    hideAButton = createButton('Hide');
+    hideAButton.position(680, 410);
+    hideAButton.mousePressed(hideA);
+    hideBButton = createButton('Hide');
+    hideBButton.position(680, 450);
+    hideBButton.mousePressed(hideB);
+    hideCButton = createButton('Hide');
+    hideCButton.position(680, 490);
+    hideCButton.mousePressed(hideC);
+    hideDButton = createButton('Hide');
+    hideDButton.position(680, 530);
+    hideDButton.mousePressed(hideD);
+    hideEButton = createButton('Hide');
+    hideEButton.position(680, 570);
+    hideEButton.mousePressed(hideE);
     
     //hangman
     //bodyline = line(450, 300, 450, 500);
@@ -254,6 +271,11 @@ function draw() {
       feedbackDiv.hide();
       rulesDiv.hide();
       questionDiv.hide();
+      hideAButton.hide();
+      hideBButton.hide();
+      hideCButton.hide();
+      hideDButton.hide();
+      hideEButton.hide();
       titleDiv.show();
       playbutton.show();
       helpbutton.show();
@@ -286,6 +308,11 @@ function draw() {
       feedbackDiv.show();
       rulesDiv.show();
       questionDiv.show();
+        hideAButton.show();
+        hideBButton.show();
+        hideCButton.show();
+        hideDButton.show();
+        hideEButton.show();
       //hanger
       fill(0);
       strokeWeight(4);
@@ -452,6 +479,7 @@ function checkD(){
     answer = "D";
     if(answer === correctOption){
         feedbackDiv.html("You are correct! WOW!");
+        resetPars();
         questionCount += 1;
     }
     else{
@@ -463,6 +491,7 @@ function checkE(){
     answer = "E";
     if(answer === correctOption){
         feedbackDiv.html("You are correct! WOW!");
+        resetPars();
         questionCount += 1;
     }
     else{
@@ -470,6 +499,30 @@ function checkE(){
         feedbackDiv.html("You are incorrect! Sorry!")
     }
 
+}
+
+function hideA(){
+    optionApar.style('color','gray');
+}
+function hideB(){
+    optionBpar.style('color','gray');
+}
+function hideC(){
+    optionCpar.style('color','gray');
+}
+function hideD(){
+    optionDpar.style('color','gray');
+}
+function hideE(){
+    optionEpar.style('color','gray');
+}
+
+function resetPars(){
+    optionApar.style('color','black');
+    optionBpar.style('color','black');
+    optionCpar.style('color','black');
+    optionDpar.style('color','black');
+    optionEpar.style('color','black');
 }
 
 function play()

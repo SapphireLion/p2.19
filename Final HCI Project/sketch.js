@@ -130,13 +130,32 @@ function setup() {
     correctOption2 = 'A';
 
     //Question 3 Setup
-    questionText3= "If Glaciers is released earlier than Hurricanes, then each of the followibg could be true EXCEPT:";
+    questionText3= "If Glaciers is released earlier than Hurricanes, then each of the following could be true EXCEPT:";
     optionAText3="A. Glaciers is released fourth.";
     optionBText3="B. Jets is released third.";
     optionCText3="C. Kangaroos is released second.";
     optionDText3="D. Lovebird is released third.";
     optionEText3="E. Lovebird is released fifth.";
     correctOption3 = 'E';
+
+    //Question 4 Setup
+    questionText4= "If Lovebird is released earlier than Kangaroos, which one of the following could be true?";
+    optionAText4="A. Lovebird is released third.";
+    optionBText4="B. Lovebird is released fourth.";
+    optionCText4="C. Hurricanes is released earlier than Lovebird.";
+    optionDText4="D. Jets is released earlier than Glaciers.";
+    optionEText4="E. Jets is released earlier than Lovebird.";
+    correctOption4 = 'D';
+
+
+    //Question 5 Setup
+    questionText5= "Which one of the following, if substituted for the condition that Fiesta must be released earlier than both Jets and Lovebird, would have the same effect on the order in which the films are released?";
+    optionAText5="A. Only Kangaroos can be released earlier than Fiesta.";
+    optionBText5="B. Kangaroos must be released earlier than Lovebird.";
+    optionCText5="C. Fiesta must be released either first or second.";
+    optionDText5="D. Fiesta must be released earlier than both Kangaroos and Lovebird.";
+    optionEText5="E. Either Fiesta or Kangaroos must be released first.";
+    correctOption5 = 'A';
 
     //formatting
     questionDiv = createDiv();
@@ -305,6 +324,24 @@ function draw() {
               optionEText=optionEText3;
               break;
           case 3:
+              questionText = questionText4;
+              correctOption = correctOption4;
+              optionAText=optionAText4;
+              optionBText=optionBText4;
+              optionCText=optionCText4;
+              optionDText=optionDText4;
+              optionEText=optionEText4;
+              break;
+          case 4:
+              questionText = questionText5;
+              correctOption = correctOption5;
+              optionAText=optionAText5;
+              optionBText=optionBText5;
+              optionCText=optionCText5;
+              optionDText=optionDText5;
+              optionEText=optionEText5;
+              break;
+          case 5:
               winorlose.html("YOU WIN!!!!!");
               winorlose.style('color', 'green');
               winorlose.style('font-size','200%');

@@ -252,10 +252,10 @@ function setup() {
     endhelpbutton.hide();
     endhelpbutton.mousePressed(endhelp);
   
-    ///quitbutton = createButton("X");
-    ///quitbutton.position(1200,25);
-    ///quitbutton.hide();
-    ///quitbutton.mousePressed(quit);
+    quitbutton = createButton("X");
+    quitbutton.position(1200,25);
+    quitbutton.hide();
+    quitbutton.mousePressed(quit);
   
     
   
@@ -326,7 +326,7 @@ function draw() {
       hangar2 = line(300,100,450,100);
       hangar3 = line(450,100,450,200);
       
-      ///quitbutton.show();
+      quitbutton.show();
 
       switch (questionCount){
           case 0:
@@ -561,4 +561,5 @@ function endhelp()
 function quit()
 {
   menu = true; 
+  wrongCount = 0;
 }

@@ -74,6 +74,8 @@ let wrongCount;
 
 let menu = true;
 let help1 = false;
+
+let speechRec;
 function preload(){
     //SAOFont=loadFont('assets/SAOWelcomeAnotherTT-Bold.ttf');
 }
@@ -81,6 +83,9 @@ function preload(){
 function setup() {
     createCanvas(1280, 640);
     background(255);
+
+    speechRec = new p5.SpeechRec("en-US", gotSpeech);
+    speechRec.start();
     optionAbtn = createButton('Pick A');
     optionAbtn.position(730, 410);
     optionAbtn.mousePressed(checkA);
@@ -215,30 +220,31 @@ function setup() {
   
   
     playbutton = createButton("Play");
-    playbutton.position(570,225)
+    playbutton.position(750,225)
     playbutton.mousePressed(play);
     playbutton.style("font-size", "32px");
     
   
     titleDiv = createDiv("LSAT Hangman");
-    titleDiv.position(225,50);
+    titleDiv.position(450,50);
     titleDiv.style("font-size", "110px");
     titleDiv.style('font-style', 'bold');
   
     helpbutton = createButton("Help");
-    helpbutton.position(570,290)
+    helpbutton.position(750,290)
     helpbutton.mousePressed(play);
     helpbutton.style("font-size", "32px");
     helpbutton.mousePressed(help);
   
     optionsbutton = createButton("Options");
-    optionsbutton.position(550,355)
+    optionsbutton.position(727,355)
     optionsbutton.mousePressed(play);
     optionsbutton.style("font-size", "32px");
     optionsbutton.mousePressed(options);
   
     helpDiv = createDiv("Rules of the game: You will be given sample logic questions from the LSAT(Law School Admission Test). If you guess wrong, a new piece of the hangman will be drawn. If you guess correctly, you will move on to the next question. The game ends when all pieces of the hangman are drawn.");
     helpDiv.position(400,200);
+    helpDiv.size(850, AUTO);
     helpDiv.style("font-size","32px");
     helpDiv.hide();
     endhelpbutton = createButton("X");
@@ -406,6 +412,10 @@ function draw() {
     }
 
 }
+
+function gotSpeech() {
+    console.log(speechRec);
+}
 function wrongAnswer(){
     if(wrongCount === 0){
         headcirc = circle(450, 250, 100);
@@ -445,6 +455,7 @@ function checkA(){
     answer = 'A';
     if(answer === correctOption){
         feedbackDiv.html("You are correct! WOW!");
+        resetPars();
         questionCount += 1;
     }
     else{
@@ -457,6 +468,7 @@ function checkB(){
     answer = "B";
     if(answer === correctOption){
         feedbackDiv.html("You are correct! WOW!");
+        resetPars();
         questionCount += 1;
     }
     else{
@@ -468,6 +480,7 @@ function checkC(){
     answer = "C";
     if(answer === correctOption){
         feedbackDiv.html("You are correct! WOW!");
+        resetPars();
         questionCount += 1;
     }
     else{

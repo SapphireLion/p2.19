@@ -74,6 +74,7 @@ let wrongCount;
 
 let menu = true;
 let help1 = false;
+let win = false;
 
 let speechRec;
 function preload(){
@@ -321,14 +322,17 @@ function draw() {
         hideCButton.show();
         hideDButton.show();
         hideEButton.show();
-      if(frameCount % 60 == 0 && seconds > 0) 
-      { 
-        seconds --;
-      }
-      if(minutes > 0 && seconds == 0)
+      if(wrongCount < 6 && win == false)
       {
-        minutes = minutes - 1; 
-        seconds = 59;
+        if(frameCount % 60 == 0 && seconds > 0) 
+        { 
+          seconds --;
+        }
+        if(minutes > 0 && seconds == 0)
+        {
+          minutes = minutes - 1; 
+          seconds = 59;
+        }
       }
       fill(255);
       textSize(32);
@@ -393,6 +397,7 @@ function draw() {
               winorlose.html("YOU WIN!!!!!");
               winorlose.style('color', 'green');
               winorlose.style('font-size','200%');
+              win = true;
       }
 
       //textSize(32);
@@ -459,6 +464,7 @@ function wrongAnswer(){
     }
     if(wrongCount === 5){
         leg2 = line(450, 500, 350, 600);
+        wrongCount += 1;
         winorlose.show();
         winorlose.html("YOU LOSE!!!");
         winorlose.style('color', 'red');

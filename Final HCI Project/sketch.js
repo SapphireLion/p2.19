@@ -375,6 +375,7 @@ function draw() {
               optionEText=optionEText5;
               break;
           case 5:
+              winorlose.show();
               winorlose.html("YOU WIN!!!!!");
               winorlose.style('color', 'green');
               winorlose.style('font-size','200%');
@@ -444,6 +445,7 @@ function wrongAnswer(){
     }
     if(wrongCount === 5){
         leg2 = line(450, 500, 350, 600);
+        winorlose.show();
         winorlose.html("YOU LOSE!!!");
         winorlose.style('color', 'red');
         winorlose.style('font-size', '200%');
@@ -560,6 +562,11 @@ function endhelp()
 
 function quit()
 {
-  menu = true; 
+  menu = true;
+  questionCount = 0;
   wrongCount = 0;
+  //
+  winorlose.hide();
+  //reset the feedback
+  feedbackDiv.html('You have not answered yet!');
 }

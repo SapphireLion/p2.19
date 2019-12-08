@@ -257,7 +257,8 @@ function setup() {
     quitbutton.hide();
     quitbutton.mousePressed(quit);
   
-    
+    seconds = 0;
+    minutes = 9;
   
   
     
@@ -302,6 +303,7 @@ function draw() {
     }
     else
     {
+      rect(90,70,80,40);
       titleDiv.hide();
       playbutton.hide();
       helpbutton.hide();
@@ -319,6 +321,18 @@ function draw() {
         hideCButton.show();
         hideDButton.show();
         hideEButton.show();
+      if(frameCount % 60 == 0 && seconds > 0) 
+      { 
+        seconds --;
+      }
+      if(minutes > 0 && seconds == 0)
+      {
+        minutes = minutes - 1; 
+        seconds = 59;
+      }
+      fill(255);
+      textSize(32);
+      timer = text(minutes + ":" + seconds,100,100);
       //hanger
       fill(0);
       strokeWeight(4);
@@ -569,4 +583,6 @@ function quit()
   winorlose.hide();
   //reset the feedback
   feedbackDiv.html('You have not answered yet!');
+  minutes = 9;
+  seconds = 0;
 }

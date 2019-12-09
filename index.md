@@ -34,6 +34,9 @@ _Help Menu Inerface_
 _Options Menu Interface_
 ![alt text](https://raw.githubusercontent.com/SapphireLion/p2.19/master/optionsMenu.jpg)
 
+### GIF
+![alt text](https://raw.githubusercontent.com/SapphireLion/p2.19/master/p2.19Final.gif)
+
 ### Demo
 [Demo](https://sapphirelion.github.io/)
 

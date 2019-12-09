@@ -88,35 +88,50 @@ function setup() {
     speechRec = new p5.SpeechRec("en-US", gotSpeech);
     speechRec.start(true, false);
     optionAbtn = createButton('Pick A');
-    optionAbtn.position(730, 410);
+    optionAbtn.position(810, 440);
+    optionAbtn.style('border-radius','25px');
+    optionAbtn.style('background-color', '#D3D3D3');
     optionAbtn.mousePressed(checkA);
     optionBbtn = createButton('Pick B');
-    optionBbtn.position(730, 450);
+    optionBbtn.position(810, 480);
+    optionBbtn.style('border-radius','25px');
+    optionBbtn.style('background-color', '#D3D3D3');
     optionBbtn.mousePressed(checkB);
     optionCbtn = createButton('Pick C');
-    optionCbtn.position(730, 490);
+    optionCbtn.position(810, 520);
+    optionCbtn.style('border-radius','25px');
+    optionCbtn.style('background-color', '#D3D3D3');
     optionCbtn.mousePressed(checkC);
     optionDbtn = createButton('Pick D');
-    optionDbtn.position(730, 530);
+    optionDbtn.position(810, 560);
+    optionDbtn.style('border-radius','25px');
+    optionDbtn.style('background-color', '#D3D3D3');
     optionDbtn.mousePressed(checkD);
     optionEbtn = createButton('Pick E');
-    optionEbtn.position(730, 570);
+    optionEbtn.position(810, 600);
+    optionEbtn.style('border-radius','25px');
+    optionEbtn.style('background-color', '#D3D3D3');
     optionEbtn.mousePressed(checkE);
 
     hideAButton = createButton('Hide');
-    hideAButton.position(680, 410);
+    hideAButton.position(740, 440);
+    hideAButton.style('border-radius','25px');
     hideAButton.mousePressed(hideA);
     hideBButton = createButton('Hide');
-    hideBButton.position(680, 450);
+    hideBButton.position(740, 480);
+    hideBButton.style('border-radius','25px');
     hideBButton.mousePressed(hideB);
     hideCButton = createButton('Hide');
-    hideCButton.position(680, 490);
+    hideCButton.position(740, 520);
+    hideCButton.style('border-radius','25px');
     hideCButton.mousePressed(hideC);
     hideDButton = createButton('Hide');
-    hideDButton.position(680, 530);
+    hideDButton.position(740, 560);
+    hideDButton.style('border-radius','25px');
     hideDButton.mousePressed(hideD);
     hideEButton = createButton('Hide');
-    hideEButton.position(680, 570);
+    hideEButton.position(740, 600);
+    hideEButton.style('border-radius','25px');
     hideEButton.mousePressed(hideE);
     
     //hangman
@@ -184,15 +199,15 @@ function setup() {
     questionDiv = createDiv();
     rulesDiv = createDiv();
     feedbackDiv = createDiv('You have not answered yet!');
-    feedbackDiv.position(180,670);
+    feedbackDiv.position(190,670);
     feedbackDiv.style('font-size', '200%');
 
     quitprompt = createDiv();
-    quitprompt.size(700,360);
+    quitprompt.size(650,360);
     quitprompt.style('background-color', 'red');
     quitprompt.style('text-align','center');
     quitprompt.style('border-radius','25px');
-    quitprompt.position(600,300);
+    quitprompt.position(670,300);
     quittext = createElement('h1').parent(quitprompt);
     //quittext.style('margin','0');
     quittext.style('position','absolute');
@@ -216,20 +231,22 @@ function setup() {
     cond2Par.style('font-style', 'italic');
     cond3Par.style('font-style', 'italic');
     questionPar = createP(questionText).parent(questionDiv);
-    optionApar = createP(optionAText).parent(questionDiv);
-    optionBpar = createP(optionBText).parent(questionDiv);
-    optionCpar = createP(optionCText).parent(questionDiv);
-    optionDpar = createP(optionDText).parent(questionDiv);
-    optionEpar = createP(optionEText).parent(questionDiv);
-    optionApar.style('text-indent', '20px');
-    optionBpar.style('text-indent', '20px');
-    optionCpar.style('text-indent', '20px');
-    optionDpar.style('text-indent', '20px');
-    optionEpar.style('text-indent', '20px');
+    //optionApar = createP(optionAText).parent(questionDiv);
+    //optionBpar = createP(optionBText).parent(questionDiv);
+    //optionCpar = createP(optionCText).parent(questionDiv);
+    //optionDpar = createP(optionDText).parent(questionDiv);
+    //optionEpar = createP(optionEText).parent(questionDiv);
+    //optionApar.style('text-indent', '20px');
+    //optionBpar.style('text-indent', '20px');
+    //optionCpar.style('text-indent', '20px');
+    //optionDpar.style('text-indent', '20px');
+    //optionEpar.style('text-indent', '20px');
   
   
     playbutton = createButton("Play");
-    playbutton.position(750,225)
+    playbutton.position(740,225);
+    playbutton.size(150,AUTO);
+    playbutton.style('border-radius', '25px');
     playbutton.mousePressed(play);
     playbutton.style("font-size", "32px");
     
@@ -240,29 +257,33 @@ function setup() {
     titleDiv.style('font-style', 'bold');
   
     helpbutton = createButton("Help");
-    helpbutton.position(750,290)
+    helpbutton.position(740,350);
+    helpbutton.size(150, AUTO);
+    helpbutton.style('border-radius','25px');
     helpbutton.mousePressed(play);
     helpbutton.style("font-size", "32px");
     helpbutton.mousePressed(help);
+
   
-    optionsbutton = createButton("Options");
-    optionsbutton.position(727,355)
-    optionsbutton.mousePressed(play);
-    optionsbutton.style("font-size", "32px");
-    optionsbutton.mousePressed(options);
-  
-    helpDiv = createDiv("Rules of the game: You will be given sample logic questions from the LSAT(Law School Admission Test). If you guess wrong, a new piece of the hangman will be drawn. If you guess correctly, you will move on to the next question. The game ends when all pieces of the hangman are drawn.");
+    helpDiv = createDiv();
     helpDiv.position(400,200);
     helpDiv.size(850, AUTO);
-    helpDiv.style("font-size","32px");
+    helptext = createP('You will be given sample logic questions from the LSAT(Law School Admission Test). You have a total of 9 minutes to answer 5 questions. If you answer incorrectly, a new piece of the hangman will be drawn. If you answer correctly, you will move on to the next question. The hide option will be useful for the process-of-elimination strategy').parent(helpDiv);
+    helptext.style("font-size","32px");
+    helptext2 = createP("If you would like to use voice controls, speak into the microphone and say 'choose Option X' or 'hide Option X', where X is the is the letter of the answer choice you would like to choose or hide.").parent(helpDiv);
+    helptext2.style("font-size","32px");
     helpDiv.hide();
-    endhelpbutton = createButton("X");
-    endhelpbutton.position(900,200);
+    endhelpbutton = createButton("QUIT HELP");
+    endhelpbutton.position(760,610);
+    endhelpbutton.style('border-radius','25px');
+    endhelpbutton.style('background-color','red');
     endhelpbutton.hide();
     endhelpbutton.mousePressed(endhelp);
   
-    quitbutton = createButton("X");
-    quitbutton.position(1200,25);
+    quitbutton = createButton("QUIT");
+    quitbutton.position(1250,25);
+    quitbutton.style('background-color','red');
+    quitbutton.style('border-radius','25px');
     quitbutton.hide();
     quitbutton.mousePressed(quit);
   
@@ -278,7 +299,8 @@ function draw() {
 
     if(menu == true)
     {
-      background(255,255,255); 
+      background(255,255,255);
+      resetPars();
       optionAbtn.hide();
       optionBbtn.hide();
       optionCbtn.hide();
@@ -296,15 +318,14 @@ function draw() {
       titleDiv.show();
       playbutton.show();
       helpbutton.show();
-      optionsbutton.show();
       helpDiv.hide();
       endhelpbutton.hide();
+      quitbutton.hide();
       if(help1 == true)
       {
         helpDiv.show();
         playbutton.hide();
         helpbutton.hide();
-        optionsbutton.hide();
         endhelpbutton.show();
       }
       
@@ -313,11 +334,11 @@ function draw() {
     }
     else
     {
-        rect(90,70,80,40);
+        rect(90,70,80,40, 25);
+
         titleDiv.hide();
         playbutton.hide();
         helpbutton.hide();
-        optionsbutton.hide();
         optionAbtn.show();
         optionBbtn.show();
         optionCbtn.show();
@@ -432,11 +453,17 @@ function draw() {
 
       //shows current question/options on screen
       questionPar.html(questionText);
-      optionApar.html(optionAText);
-      optionBpar.html(optionBText);
-      optionCpar.html(optionCText);
-      optionDpar.html(optionDText);
-      optionEpar.html(optionEText);
+      //optionApar.html(optionAText);
+        optionAbtn.html(optionAText);
+      //optionBpar.html(optionBText);
+        optionBbtn.html(optionBText);
+      //optionCpar.html(optionCText);
+        optionCbtn.html(optionCText);
+      //optionDpar.html(optionDText);
+        optionDbtn.html(optionDText);
+      //optionEpar.html(optionEText);
+        optionEbtn.html(optionEText);
+
     }
 
 }
@@ -446,20 +473,35 @@ function gotSpeech() {
         output = speechRec.resultString;
         console.log(output);
         console.log(output.toLowerCase());
-        if(output.toLowerCase() === 'option a'){
+        if(output.toLowerCase() === 'choose option a'){
             checkA();
         }
-        if(output.toLowerCase() === 'option b'){
+        if(output.toLowerCase() === 'choose option b'){
             checkB();
         }
-        if(output.toLowerCase() === 'option c'){
+        if(output.toLowerCase() === 'choose option c'){
             checkC();
         }
-        if(output.toLowerCase() === 'option d'){
+        if(output.toLowerCase() === 'choose option d'){
             checkD();
         }
-        if(output.toLowerCase() === 'option e'){
+        if(output.toLowerCase() === 'choose option e'){
             checkE();
+        }
+        if(output.toLowerCase() === 'hide option a'){
+            hideA();
+        }
+        if(output.toLowerCase() === 'hide option b'){
+            hideB();
+        }
+        if(output.toLowerCase() === 'hide option c'){
+            hideC();
+        }
+        if(output.toLowerCase() === 'hide option d'){
+            hideD();
+        }
+        if(output.toLowerCase() === 'hide option e'){
+            hideE();
         }
 
     }
@@ -512,6 +554,7 @@ function checkA(){
         wrongAnswer();
         feedbackDiv.html("You are incorrect! Sorry!");
         feedbackDiv.style("color", "red");
+        optionAbtn.style('background-color','red');
     }
 }
 
@@ -527,6 +570,7 @@ function checkB(){
         wrongAnswer();
         feedbackDiv.html("You are incorrect! Sorry!");
         feedbackDiv.style("color", "red");
+        optionBbtn.style('background-color','red');
     }
 }
 function checkC(){
@@ -540,8 +584,8 @@ function checkC(){
     else{
         wrongAnswer();
         feedbackDiv.html("You are incorrect! Sorry!");
-        feedbackDiv.style("color", "green");
         feedbackDiv.style("color", "red");
+        optionCbtn.style('background-color','red');
     }
 }
 function checkD(){
@@ -556,6 +600,7 @@ function checkD(){
         wrongAnswer();
         feedbackDiv.html("You are incorrect! Sorry!");
         feedbackDiv.style("color", "red");
+        optionDbtn.style('background-color','red');
     }
 }
 function checkE(){
@@ -570,32 +615,33 @@ function checkE(){
         wrongAnswer();
         feedbackDiv.html("You are incorrect! Sorry!");
         feedbackDiv.style("color", "red");
+        optionEbtn.style('background-color','red');
     }
 
 }
 
 function hideA(){
-    optionApar.style('color','gray');
+    optionAbtn.style('background-color','red');
 }
 function hideB(){
-    optionBpar.style('color','gray');
+    optionBbtn.style('background-color','red');
 }
 function hideC(){
-    optionCpar.style('color','gray');
+    optionCbtn.style('background-color','red');
 }
 function hideD(){
-    optionDpar.style('color','gray');
+    optionDbtn.style('background-color','red');
 }
 function hideE(){
-    optionEpar.style('color','gray');
+    optionEbtn.style('background-color','red');
 }
 
 function resetPars(){
-    optionApar.style('color','black');
-    optionBpar.style('color','black');
-    optionCpar.style('color','black');
-    optionDpar.style('color','black');
-    optionEpar.style('color','black');
+    optionAbtn.style('background-color','#D3D3D3');
+    optionBbtn.style('background-color','#D3D3D3');
+    optionCbtn.style('background-color','#D3D3D3');
+    optionDbtn.style('background-color','#D3D3D3');
+    optionEbtn.style('background-color','#D3D3D3');
 }
 
 function play()
@@ -608,10 +654,6 @@ function help()
   help1 = true;
 }
 
-function options()
-{
-  
-}
 
 function endhelp()
 {
@@ -628,4 +670,5 @@ function quit()
   feedbackDiv.style("color", "black");
   minutes = 9;
   seconds = 0;
+  win = false;
 }

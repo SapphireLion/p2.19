@@ -35,7 +35,7 @@ _Options Menu Interface_
 ![alt text](https://raw.githubusercontent.com/SapphireLion/p2.19/master/optionsMenu.jpg)
 
 ### GIF
-![alt text](https://raw.githubusercontent.com/SapphireLion/p2.19/master/p2.19Final.gif)
+![alt text](https://raw.githubusercontent.com/SapphireLion/p2.19/master/p2Final.19.gif.gif)
 
 ### Demo
 [Demo](https://sapphirelion.github.io/)

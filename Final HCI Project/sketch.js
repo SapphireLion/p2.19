@@ -184,7 +184,7 @@ function setup() {
     questionDiv = createDiv();
     rulesDiv = createDiv();
     feedbackDiv = createDiv('You have not answered yet!');
-    feedbackDiv.position(170,670);
+    feedbackDiv.position(180,670);
     feedbackDiv.style('font-size', '200%');
 
     quitprompt = createDiv();

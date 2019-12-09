@@ -244,7 +244,7 @@ function setup() {
   
   
     playbutton = createButton("Play");
-    playbutton.position(740,225);
+    playbutton.position(720,225);
     playbutton.size(150,AUTO);
     playbutton.style('border-radius', '25px');
     playbutton.mousePressed(play);
@@ -257,7 +257,7 @@ function setup() {
     titleDiv.style('font-style', 'bold');
   
     helpbutton = createButton("Help");
-    helpbutton.position(740,350);
+    helpbutton.position(720,350);
     helpbutton.size(150, AUTO);
     helpbutton.style('border-radius','25px');
     helpbutton.mousePressed(play);

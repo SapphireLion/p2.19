@@ -184,12 +184,20 @@ function setup() {
     questionDiv = createDiv();
     rulesDiv = createDiv();
     feedbackDiv = createDiv('You have not answered yet!');
-    feedbackDiv.position(650,650);
+    feedbackDiv.position(170,670);
     feedbackDiv.style('font-size', '200%');
 
-    winorlose = createDiv();
-    winorlose.position(700,700);
-    winorlose.style('font-weight', 'bold');
+    quitprompt = createDiv();
+    quitprompt.size(700,360);
+    quitprompt.style('background-color', 'red');
+    quitprompt.style('text-align','center');
+    quitprompt.style('border-radius','25px');
+    quitprompt.position(600,300);
+    quittext = createElement('h1').parent(quitprompt);
+    //quittext.style('margin','0');
+    quittext.style('position','absolute');
+    quittext.style('top','35%');
+    quittext.style('left','5%');
 
     rulesDiv.position(800,0);
     rulesDiv.size(450, AUTO);
@@ -284,6 +292,7 @@ function draw() {
       hideCButton.hide();
       hideDButton.hide();
       hideEButton.hide();
+      quitprompt.hide();
       titleDiv.show();
       playbutton.show();
       helpbutton.show();
@@ -393,10 +402,9 @@ function draw() {
               optionEText=optionEText5;
               break;
           case 5:
-              winorlose.show();
-              winorlose.html("YOU WIN!!!!!");
-              winorlose.style('color', 'green');
-              winorlose.style('font-size','200%');
+              quitprompt.show();
+              quitprompt.style('background-color', 'green');
+              quittext.html("You WIN! Please quit the game to restart.");
               win = true;
       }
 
@@ -465,10 +473,9 @@ function wrongAnswer(){
     if(wrongCount === 5){
         leg2 = line(450, 500, 350, 600);
         wrongCount += 1;
-        winorlose.show();
-        winorlose.html("YOU LOSE!!!");
-        winorlose.style('color', 'red');
-        winorlose.style('font-size', '200%');
+        quitprompt.show();
+        quitprompt.style('background-color', 'red');
+        quittext.html("You lose. Please quit the game to restart.");
         return;
     }
 
@@ -477,12 +484,14 @@ function checkA(){
     answer = 'A';
     if(answer === correctOption){
         feedbackDiv.html("You are correct! WOW!");
+        feedbackDiv.style("color", "green");
         resetPars();
         questionCount += 1;
     }
     else{
         wrongAnswer();
-        feedbackDiv.html("You are incorrect! Sorry!")
+        feedbackDiv.html("You are incorrect! Sorry!");
+        feedbackDiv.style("color", "red");
     }
 }
 
@@ -490,48 +499,57 @@ function checkB(){
     answer = "B";
     if(answer === correctOption){
         feedbackDiv.html("You are correct! WOW!");
+        feedbackDiv.style("color", "green");
         resetPars();
         questionCount += 1;
     }
     else{
         wrongAnswer();
-        feedbackDiv.html("You are incorrect! Sorry!")
+        feedbackDiv.html("You are incorrect! Sorry!");
+        feedbackDiv.style("color", "red");
     }
 }
 function checkC(){
     answer = "C";
     if(answer === correctOption){
         feedbackDiv.html("You are correct! WOW!");
+        feedbackDiv.style("color", "green");
         resetPars();
         questionCount += 1;
     }
     else{
         wrongAnswer();
-        feedbackDiv.html("You are incorrect! Sorry!")
+        feedbackDiv.html("You are incorrect! Sorry!");
+        feedbackDiv.style("color", "green");
+        feedbackDiv.style("color", "red");
     }
 }
 function checkD(){
     answer = "D";
     if(answer === correctOption){
         feedbackDiv.html("You are correct! WOW!");
+        feedbackDiv.style("color", "green");
         resetPars();
         questionCount += 1;
     }
     else{
         wrongAnswer();
-        feedbackDiv.html("You are incorrect! Sorry!")
+        feedbackDiv.html("You are incorrect! Sorry!");
+        feedbackDiv.style("color", "red");
     }
 }
 function checkE(){
     answer = "E";
     if(answer === correctOption){
         feedbackDiv.html("You are correct! WOW!");
+        feedbackDiv.style("color", "green");
         resetPars();
         questionCount += 1;
     }
     else{
         wrongAnswer();
-        feedbackDiv.html("You are incorrect! Sorry!")
+        feedbackDiv.html("You are incorrect! Sorry!");
+        feedbackDiv.style("color", "red");
     }
 
 }
@@ -585,10 +603,9 @@ function quit()
   menu = true;
   questionCount = 0;
   wrongCount = 0;
-  //
-  winorlose.hide();
   //reset the feedback
   feedbackDiv.html('You have not answered yet!');
+  feedbackDiv.style("color", "black");
   minutes = 9;
   seconds = 0;
 }

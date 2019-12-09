@@ -86,7 +86,7 @@ function setup() {
     background(255);
 
     speechRec = new p5.SpeechRec("en-US", gotSpeech);
-    speechRec.start();
+    speechRec.start(true, false);
     optionAbtn = createButton('Pick A');
     optionAbtn.position(730, 410);
     optionAbtn.mousePressed(checkA);
@@ -313,19 +313,19 @@ function draw() {
     }
     else
     {
-      rect(90,70,80,40);
-      titleDiv.hide();
-      playbutton.hide();
-      helpbutton.hide();
-      optionsbutton.hide();
-      optionAbtn.show();
-      optionBbtn.show();
-      optionCbtn.show();
-      optionDbtn.show();
-      optionEbtn.show();
-      feedbackDiv.show();
-      rulesDiv.show();
-      questionDiv.show();
+        rect(90,70,80,40);
+        titleDiv.hide();
+        playbutton.hide();
+        helpbutton.hide();
+        optionsbutton.hide();
+        optionAbtn.show();
+        optionBbtn.show();
+        optionCbtn.show();
+        optionDbtn.show();
+        optionEbtn.show();
+        feedbackDiv.show();
+        rulesDiv.show();
+        questionDiv.show();
         hideAButton.show();
         hideBButton.show();
         hideCButton.show();
@@ -442,7 +442,27 @@ function draw() {
 }
 
 function gotSpeech() {
-    console.log(speechRec);
+    if(speechRec.resultValue) {
+        output = speechRec.resultString;
+        console.log(output);
+        console.log(output.toLowerCase());
+        if(output.toLowerCase() === 'option a'){
+            checkA();
+        }
+        if(output.toLowerCase() === 'option b'){
+            checkB();
+        }
+        if(output.toLowerCase() === 'option c'){
+            checkC();
+        }
+        if(output.toLowerCase() === 'option d'){
+            checkD();
+        }
+        if(output.toLowerCase() === 'option e'){
+            checkE();
+        }
+
+    }
 }
 function wrongAnswer(){
     if(wrongCount === 0){
